@@ -1,8 +1,9 @@
 {
   "name": "movie-info",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "engines": {
-    "node": "12.x"
+    "node": "12.x",
+    "npm":"6.x"
   },
   "private": true,
   "dependencies": {
