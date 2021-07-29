@@ -59,6 +59,7 @@ const App = () => {
     ) : (
       movies.map((movie, index) => (
         <Movie key={`${index}-${movie.Title}`} movie={movie} />
+        // mayby add an <Forbidden /> component for movies that movie.rated === "PG-13" e.g - will map different components
       ))
     );
 

@@ -5,7 +5,7 @@ const Search = ({ search }) => {
 
   const handleSearchInputChanges = event => {
     setSearchValue(event.target.value);
-    // for clean search (that aviods unpropreate results - we could add an if statemnet and setSearchValue("")  for some strings)
+    // for clean search (that aviods unpropreate results) - we could add an if statemnet and setSearchValue("")  for some strings)
   };
 
   const resetInputField = () => {
