@@ -8,8 +8,8 @@ import Movie from "./components/Movie/Movie";
 import Search from "./components/SearchFunc/SearchFunc";
 import spinner from "./assets/spinner.gif";
 
-const MY_API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
-const MOVIE_API_URL = `https://www.omdbapi.com/?s=man&apikey=${MY_API_KEY}`;
+// const MY_API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
+const MOVIE_API_URL = `https://www.omdbapi.com/?s=man&apikey=c9f4232`;
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -30,7 +30,7 @@ const App = () => {
       type: "SEARCH_MOVIES_REQUEST"
     });
 
-    axios(`https://www.omdbapi.com/?s=${searchValue}&apikey=${MY_API_KEY}`).then(
+    axios(`https://www.omdbapi.com/?s=${searchValue}&apikey=c9f4232`).then(
       jsonResponse => {
         if (jsonResponse.data.Response === "True") {
           dispatch({
