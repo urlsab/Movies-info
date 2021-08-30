@@ -1,0 +1,10 @@
+.movieHeader {
+    color: rgb(0, 110, 255);
+    font-size: 17px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.movieHeader:hover {
+    color: rgb(21, 177, 68);
+    cursor: pointer;
+}
