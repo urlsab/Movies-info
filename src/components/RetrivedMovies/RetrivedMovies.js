@@ -42,7 +42,6 @@ const RetrievedMovies = () => {
   // include the properties from the reducer object
   const { movies, errorMessage, loading } = state;
   
-
   // render the movies with some conditionals
   const showMovies =
 
@@ -52,7 +51,7 @@ const RetrievedMovies = () => {
 
       // if user never searched
       loading && checkEntry === 0 && !errorMessage ? (
-      <p>type any word</p>
+      <p className="beforeGif">type any word </p>
     ):
 
       errorMessage ? (
