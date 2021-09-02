@@ -2,63 +2,13 @@
   text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  height: 70px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 20px;
-  cursor: pointer;
-}
-
-.spinner {
-  height: 80px;
-  margin: auto;
-}
-
 .App-intro {
   font-size: large;
 }
 
-/* new css for movie component */
-
+/*  '*' = for all files this style will "win" for box-sizing */
 * {
   box-sizing: border-box;
-}
-
-.movies {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-.App-header h2 {
-  margin: 0;
-}
-
-.add-movies {
-  text-align: center;
-}
-
-.add-movies button {
-  font-size: 16px;
-  padding: 8px;
-  margin: 0 10px 30px 10px;
-}
-
-.movie {
-  padding: 5px 25px 10px 25px;
-  max-width: 25%;
-}
-
-.errorMessage {
-  margin: auto;
-  font-weight: bold;
-  color: rgb(161, 15, 15);
 }
 
 @media screen and (min-width: 694px) and (max-width: 915px) {
