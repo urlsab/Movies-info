@@ -1,0 +1,16 @@
+.movies {
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction: row;
+}
+
+.spinner {
+    height: 80px;
+    margin: auto;
+}
+
+.errorMessage {
+    margin: auto;
+    font-weight: bold;
+    color: rgb(161, 15, 15);
+}
