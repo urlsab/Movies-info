@@ -1,3 +1,9 @@
+.movie {
+    padding: 5px 25px 10px 25px;
+    max-width: 50%;
+    /* display: block; */
+}
+
 .movieHeader {
     color: rgb(0, 110, 255);
     font-size: 17px;
@@ -7,4 +13,14 @@
 .movieHeader:hover {
     color: rgb(21, 177, 68);
     cursor: pointer;
+}
+
+.movieAlsoLike {
+    color: rgb(110, 86, 41);
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.movieAlsoLike:hover {
+    color: rgb(28, 24, 231);
 }

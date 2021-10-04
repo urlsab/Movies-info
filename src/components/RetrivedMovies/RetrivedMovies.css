@@ -10,9 +10,10 @@
 }
 
 .errorMessage {
-    margin: auto;
+    margin: 200px auto;
     font-weight: bold;
     color: rgb(161, 15, 15);
+    font-size: 20px;
 }
 
 .beforeGif {
