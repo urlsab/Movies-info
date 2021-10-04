@@ -25,6 +25,7 @@ const RetrievedMovies = () => {
       jsonResponse => {
         if (jsonResponse.data.Response === "True") {
           checkEntry++;
+          console.log(jsonResponse.data.Search);
           dispatch({
             type: "SEARCH_MOVIES_SUCCESS",
             payload: jsonResponse.data.Search
@@ -51,7 +52,11 @@ const RetrievedMovies = () => {
 
       // if user never searched
       loading && checkEntry === 0 && !errorMessage ? (
-      <p className="beforeGif">type any word </p>
+        <div  className="beforeGif">
+          <p>type any word </p>
+          <p>and wait few seconds</p>
+        </div>
+      
     ):
 
       errorMessage ? (
@@ -76,3 +81,22 @@ const RetrievedMovies = () => {
 }
 
 export default RetrievedMovies;
+
+/*
+
+// 3 types of search: s=for serach , t=for movie title, i=for movie id
+    // just 'axios' is === to 'axios.get'
+    axios(`https://www.omdbapi.com/?s=${searchValue}&apikey=${MY_API_KEY}`).then(
+      jsonResponse => {
+        const respone = jsonResponse.data.Response ;
+        const data = jsonResponse.data;
+        // need a for loop for Search[i]
+        const search = jsonResponse.data.Search[3];
+        const imdbID = jsonResponse.data.Search[3].imdbID;
+        if (respone === "True") {
+          checkEntry++;
+          console.log(search);
+          console.log(data);
+          console.log(imdbID);
+
+*/
