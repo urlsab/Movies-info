@@ -1,5 +1,5 @@
+import React, { useState } from 'react';
 import './SearchFunc.css';
-import React, { useState } from "react";
 
 const SearchFunc = ({ search }) => {
   
