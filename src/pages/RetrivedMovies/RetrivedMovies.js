@@ -20,6 +20,7 @@ const RetrievedMovies = () => {
       type: "SEARCH_MOVIES_REQUEST",
     });
 
+    // how and why?
     const { Response, Search, Error } = await searchMovies(searchValue);
 
     if (Response === "True") {
@@ -55,7 +56,7 @@ const RetrievedMovies = () => {
       movies.map((movie, index) => (
         <Movie key={`${index}-${movie.Title}`} movie={movie} />
 
-        // mayby add an <Forbidden /> component for movies that movie.rated === "PG-13" e.g - will map different components
+        // maybe add an <Forbidden /> component for movies that movie.rated === "PG-13" e.g - will map different components
       ))
     );
 

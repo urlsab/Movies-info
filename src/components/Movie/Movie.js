@@ -1,6 +1,8 @@
 import React from "react";
 import "./Movie.css";
 import { Card, CardActionArea, CardContent, Typography } from "@mui/material";
+
+// how?! you don't have any func or component there with the name "LinkButton"
 import LinkButton from "../ButtonMovieName/ButtonMovieName";
 
 const MY_API_KEY = process.env.REACT_APP_MOVIES_API_KEY;

@@ -7,6 +7,8 @@ const Routes = () => (
   <Router>
     <Switch>
       <Route exact path="/" component={RetrievedMovies} />
+      
+      {/* : is for dynamic path after absulue path of '/movie' */}
       <Route exact path="/movie/:movieId" component={SelectedMovie} />
     </Switch>
   </Router>
