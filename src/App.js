@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
-import RetrievedMovies from "./components/RetrivedMovies/RetrivedMovies";
+import Routes from "./routes";
 import Navbar from './components/Navbar/Navbar';
 
 const App = () => {
@@ -10,11 +9,7 @@ const App = () => {
       <div className="App">
         <div className="m-container">
           <Navbar />
-            <Switch>
-              {/* <Route path="/action" component={Action} />
-              <Route path="/drama" component={Drama} /> */}
-            </Switch>
-          <RetrievedMovies />
+          <Routes />
         </div>
       </div>
     </React.Fragment>

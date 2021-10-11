@@ -1,8 +1,14 @@
 .movie {
     padding: 5px 25px 10px 25px;
-    max-width: 50%;
+    /* max-width: 50%; */
     /* display: block; */
 }
+
+.card {
+    margin: "50px";
+    padding: "10rem";
+    text-align: "center";
+  }
 
 .movieHeader {
     color: rgb(0, 110, 255);
