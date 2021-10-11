@@ -3,6 +3,9 @@ import "./Movie.css";
 import { Card, CardActionArea, CardContent, Typography } from "@mui/material";
 
 // how?! you don't have any func or component there with the name "LinkButton"
+// you should learn the difference between "named-export" and between "default export"
+// because in the ButtonMovieName compont at the end - i default export, so its mean i can call it at every name as i want
+// like : import YairSabag from "../ButtonMovieName/ButtonMovieName"; - this is legal
 import LinkButton from "../ButtonMovieName/ButtonMovieName";
 
 const MY_API_KEY = process.env.REACT_APP_MOVIES_API_KEY;

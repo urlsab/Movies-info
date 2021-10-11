@@ -21,6 +21,7 @@ const RetrievedMovies = () => {
     });
 
     // how and why?
+    // destruct only the data i want from the api response
     const { Response, Search, Error } = await searchMovies(searchValue);
 
     if (Response === "True") {
