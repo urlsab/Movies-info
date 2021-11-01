@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 // no css import because we style inside the button with mui attribiutes
 
-const ButtonMovieName = ({ linkPath, text }) => {
+const ButtonAlsoLike = ({ linkPath, text }) => {
   return (
     <Button
       //how dose this work? you have no component with the name "Link"...
@@ -16,11 +16,11 @@ const ButtonMovieName = ({ linkPath, text }) => {
       component={Link}
       to={linkPath}
       color="primary"
-      variant="outlined"
+      variant="secondary"
     >
       {text}
     </Button>
   );
 };
 
-export default ButtonMovieName;
+export default ButtonAlsoLike;

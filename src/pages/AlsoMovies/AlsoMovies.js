@@ -3,31 +3,25 @@ import { useParams } from "react-router";
 import { Grid } from "@mui/material";
 
 // Api
-import { getSelectedMovies } from "../../api";
+import { getAlsoMovies } from "../../api";
 
 // components
-import Movie from "../../components/Movie/Movie";
+import MoviesForAlso from "../../components/MoviesForAlso/MoviesForAlso";
 
 // that exact name because of index.js of dir routes
-const SelectedMovie = () => {
+const AlsoMovies = () => {
 
   // how and why?
   // how useParams works?
 
   // https://stackoverflow.com/a/60998589/10766305
-  // it is just to destruct the movie-id from the url path
-
-  // from routes folder: <Route exact path="/movie/:movieId" component={SelectedMovie} />
-  // :movieId === our param
-  // const { movieId } must be that name because of :movieId in the routes/ index.js
-  // useParams() catch what in the keft side of '='
-  const { movieId } = useParams();
+  const { movieTitle } = useParams();
 
   // how and why?
   // why useState with ({}) and not just ()?
 
   // the {} is the state init value, and the movie is an object and not a string - so i init it with empty object
-  const [clickedMovie, setSelectedMovie] = useState({});
+  const [clickedAlso, setAlsoMovies] = useState({});
 
   // when page loads - to fetch the movie from api
 
@@ -38,8 +32,8 @@ const SelectedMovie = () => {
   // if you will make your app bigger and smarter - of course!
   useEffect(() => {
     async function getMovieFromApi() {
-      const movieData = await getSelectedMovies(movieId);
-      setSelectedMovie(movieData);
+      const movieData = await getAlsoMovies(movieTitle);
+      setAlsoMovies(movieData);
     }
 
     getMovieFromApi();
@@ -47,9 +41,9 @@ const SelectedMovie = () => {
 
   return (
     <Grid container justifyContent="center" alignItems="center">
-      <Movie movie={clickedMovie} toShowMoreInfoButton={false} />
+      <MoviesForAlso movie={clickedAlso} toShowMoreAlsoButton={false} />
     </Grid>
   );
 };
 
-export default SelectedMovie;
+export default AlsoMovies;

@@ -1,8 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 
-// don't delete Router !!! it will break the code
-import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (

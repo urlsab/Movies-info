@@ -1,24 +1,15 @@
 /*
 
-1. make line 17 & 30 on Movie.js to happend
+1. you may also like - just run anonther search request with the movie.title that clicked
 
-ways of solution:
+// maybe need to split the movie-compo to 2 compoes: 1 - for retrived & selected. 2- for also like
 
-a: some how just display the whole json url with style
--- look for styled json files methods
+2. pages function - for any search (s=) - numbers will display at the bottom of the page
+    and any click on each number will run a new req with the '&page={clickedNumberPage}' value
 
-b: click on the a tag will render component with the relevent data
--- should send 2 axios req for get the full json data on each movie
--- maybe handle new case on the reducer
--- maybe call a function onClick the a tag
--- replace a tag as link tag and handle this with react-router-dom as new component (like clicking on navbar of react-router-dom)
+3. make the navbar of geners work
 
-2. make the navbar of geners work
-
-ways of solution:
-
-a: **on omdb api there no way for search bt genere
--- fake 4 components with specific list of movies (create axios req for each one of them)
--- 
+** on omdb api there is no end-point for search by genere
+a: fake 4 components with specific list of movies (create axios req for each one of them)
 
 */

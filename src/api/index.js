@@ -3,10 +3,18 @@
 // import React from "react"; - we dont use any component here like inside the reducer..so no need to import React 
 import axios from 'axios';
 
+const randPageNumb = Math.floor((Math.random() * 100) + 1);
+
 // shortcuts for make the code below to be cleaner
 const MY_API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
 const API_BASE_URL = 'https://www.omdbapi.com/?';
 const API_STR = '&apikey=';
+
+const API_END_URL = `${MY_API_KEY}${API_STR}`;
+
+// no option of combination between page= to t= , becauase t= (search by title) gives the 1st result
+// we can combiantion between page= to s=
+const pages = 'https://omdbapi.com/?s=super&page=9&apiKey=c9f4232';
 
 // q's:
 // 1. why async?
@@ -22,7 +30,7 @@ const API_STR = '&apikey=';
 // - and i dont need all the response object from axios - only the data.
 
 // function for get movie reuslts after search movies
-export const searchMovies = async (searchText) => {
+export const getSearchMovies = async (searchText) => {
 
   // const { data } can be any name, and the spaces are not neccery but more nice
   const { data } = await axios({
@@ -51,7 +59,7 @@ export const searchMovies = async (searchText) => {
 };
 
 // function for get deatailed data on specific movie after click on his button "more info"
-export const getSelectedMovie = async (movieId) => {
+export const getSelectedMovies = async (movieId) => {
 
   const { data } = await axios({
     method: 'GET',
@@ -61,21 +69,23 @@ export const getSelectedMovie = async (movieId) => {
   return data;
 };
 
-// function for get movie results with similar name of a movie that the user clicked on his "you may also like"
-export const getAlsoLikeMovies = async (movieTitle) => {
-
-  const { data } = await axios({
-    method: 'GET',
-    url: `${API_BASE_URL}t=${movieTitle}${API_STR}${MY_API_KEY}`
-  })
-
-  return data;
-}
-
-//q's:
+ //q's:
 // do i need to write another func for "you may also like" or i can use "getSelectedMovie" again?
 
 //an's: elik65a
 // it is depends on the api end point, from where yo get the data for "you may also like" ?
 // if its a brand new request with new end point and some other params - make new one, 
 // if it very match the same - so make the "getSelectedMovie" more generic and reuse it
+
+// ===========
+
+// // function for get movie reuslts after click on "you may also like button"
+// 'movieTitle' will use on the useParam() func at the AlsoMovies component and at the routes.js file
+export const getAlsoMovies = async (movieTitle) => {
+  const { data } = await axios({
+    method: 'GET',
+    url: `${API_BASE_URL}s=${movieTitle}${API_STR}${MY_API_KEY}`
+  });
+  return data;
+
+}
