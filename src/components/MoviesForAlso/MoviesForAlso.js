@@ -52,7 +52,6 @@ const MoviesForAlso = ({ movie, toShowMoreAlsoButton = true }) => {
 
         {renderAlsoMoviesForAlsos()}
 
-        
         <CardActionArea>
 
           {/* this <p> rendered as undfined. why??? */}

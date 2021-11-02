@@ -3,7 +3,7 @@ import { initialState, reducer } from "../../reducer/reducer";
 import "./RetrivedMovies.css";
 
 // Api
-// for named export (and not deafult) we import by '{func/compo-name}'
+// for named export (and not default) we import by '{func/compo-name}'
 import { getSearchMovies } from "../../api";
 
 import Movie from "../../components/Movie/Movie";
