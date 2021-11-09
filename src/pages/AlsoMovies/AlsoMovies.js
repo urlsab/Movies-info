@@ -32,8 +32,8 @@ const AlsoMovies = () => {
   // if you will make your app bigger and smarter - of course!
   useEffect(() => {
     async function getMovieFromApi() {
-      const movieData = await getAlsoMovies(movieTitle);
-      setAlsoMovies(movieData);
+      const { Search } = await getAlsoMovies(movieTitle);
+      setAlsoMovies(Search);
     }
 
     getMovieFromApi();
@@ -41,7 +41,7 @@ const AlsoMovies = () => {
 
   return (
     <Grid container justifyContent="center" alignItems="center">
-      <MoviesForAlso movie={clickedAlso} toShowMoreAlsoButton={false} />
+      <MoviesForAlso movies={clickedAlso} toShowMoreAlsoButton={false} />
     </Grid>
   );
 };

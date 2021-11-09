@@ -16,12 +16,15 @@ const DEFAULT_PLACEHOLDER_IMAGE = 'https://www.allianceplast.com/wp-content/uplo
 // define as an object for geting the properties
 //.Title and .Year are saved properties from the ombd-API
 
-const MoviesForAlso = ({ movie, toShowMoreAlsoButton = true }) => {
+
+const MoviesForAlso = ({ movies, toShowMoreAlsoButton = true }) => {
+
+  console.log("movies", movies);
 
   // "N/A" is save string from the omdb-api that means that the MoviesForAlso have no poster
-  const poster = movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster;
-  
-  const renderAlsoMoviesForAlsos = () => {
+  const poster = (movie) => movie?.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie?.Poster;
+
+  const renderAlsoMoviesForAlsos = (movie) => {
     if (toShowMoreAlsoButton) {
       return <ButtonAlsoLike linkPath={`Movie/${movie.Title}`} text="YOU MAY ALSO LIKE" />
     }
@@ -34,34 +37,40 @@ const MoviesForAlso = ({ movie, toShowMoreAlsoButton = true }) => {
     </Typography>;
     }
   }
+  
+  const renderMovies = () => (
+    movies.map(movie => (
+      <Card>
+      <CardContent>
+        <img
+          width="200"
+          height="270"
+          alt={`The MoviesForAlso titled: ${movie.Title}`}
+          src={poster(movie)}
+        />
+      </CardContent>
+      <p> {movie.Title} </p>
+      <p> ({movie.Year}) </p>
+      {/* {renderMoreInfoSection()} */}
 
+      {renderAlsoMoviesForAlsos(movie)}
+
+      <CardActionArea>
+
+        {/* this <p> rendered as undfined. why??? */}
+        {/* <p> ({MoviesForAlso.Year}) </p> */}
+
+        {/* should render again list of MoviesForAlsos with similar name/title */}
+        
+      </CardActionArea>
+      
+    </Card>
+    ))
+  );
+   
   return (
     <div className="movie">
-      <Card>
-        <CardContent>
-          <img
-            width="200"
-            height="270"
-            alt={`The MoviesForAlso titled: ${movie.Title}`}
-            src={poster}
-          />
-        </CardContent>
-        <p> {movie.Title} </p>
-        <p> ({movie.Year}) </p>
-        {/* {renderMoreInfoSection()} */}
-
-        {renderAlsoMoviesForAlsos()}
-
-        <CardActionArea>
-
-          {/* this <p> rendered as undfined. why??? */}
-          {/* <p> ({MoviesForAlso.Year}) </p> */}
-
-          {/* should render again list of MoviesForAlsos with similar name/title */}
-          
-        </CardActionArea>
-        
-      </Card>
+     { movies?.length && renderMovies()}
     </div>
   );
 };
