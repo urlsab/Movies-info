@@ -1,14 +1,22 @@
+/*
+
+eli isak add to this compo:
+1. api req
+2. part of search func that relevent
+3. onClick event to this button with the relevent logic of searchFunc compo
+
+*/
+
 import React from "react";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { getSearchMovies } from "../../api";
+// no css import because we style inside the button with mui attribiutes
 
 const MY_API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
 const API_BASE_URL = 'https://www.omdbapi.com/?';
 const API_STR = '&apikey=';
-
-// no css import because we style inside the button with mui attribiutes
 
 const ButtonAlsoLike = ({ linkPath, text }) => {
 
@@ -30,9 +38,12 @@ const ButtonAlsoLike = ({ linkPath, text }) => {
     getSearchMovies(searchValue);
   }
 
-  const callSearchFunction = event => {
+  const callSearchFunction = (event, movieTitle) => {
     event.preventDefault();
-    search("Toy Story");
+
+    // should be something like: search(movie.Title)
+    search(movieTitle); // console.log all movies with the word "undefined" :)
+    
   };
 
   return (
