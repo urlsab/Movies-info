@@ -27,6 +27,8 @@ const Movie = ({ movie, toShowMoreInfoButton = true, toShowMoreAlsoButton = true
     if (toShowMoreInfoButton) {
       return <div>
               <ButtonMovieName linkPath={`movie/${movie.imdbID}`} text="MORE INFO" />
+
+              {/* allways give different path name for each route for avoid errors */}
               <ButtonAlsoLike linkPath={`movie/${movie.Title}`} text="YOU MAY ALSO LIKE" />
             </div>
       
