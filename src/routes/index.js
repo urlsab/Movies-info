@@ -15,9 +15,7 @@ const Routes = () => (
       {/* :movieId is possible only after import { Route } from "react-router-dom";  */}
       <Route exact path="/movie/:movieId" component={SelectedMovie} />
 
-      {/* allways give different path name for each route for avoid errors */}
-      
-      <Route exact path="/movie/:movieTitle" component={AlsoMovies} />
+      <Route exact path="/also-like/:movieTitle" component={AlsoMovies} />
 
     </Switch>
   </Router>

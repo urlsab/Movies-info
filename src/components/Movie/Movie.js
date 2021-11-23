@@ -19,6 +19,7 @@ const DEFAULT_PLACEHOLDER_IMAGE = 'https://www.allianceplast.com/wp-content/uplo
 //.Title and .Year are saved properties from the ombd-API
 
 const Movie = ({ movie, toShowMoreInfoButton = true, toShowMoreAlsoButton = true }) => {
+  console.log("movie", movie);
 
   // "N/A" is save string from the omdb-api that means that the movie have no poster
   const poster = movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster;
@@ -28,8 +29,8 @@ const Movie = ({ movie, toShowMoreInfoButton = true, toShowMoreAlsoButton = true
       return <div>
               <ButtonMovieName linkPath={`movie/${movie.imdbID}`} text="MORE INFO" />
 
-              {/* allways give different path name for each route for avoid errors */}
-              <ButtonAlsoLike linkPath={`movie/${movie.Title}`} text="YOU MAY ALSO LIKE" />
+              <ButtonMovieName linkPath={`also-like/${movie.Title}`} text="YOU MAY ALSO LIKE" />
+
             </div>
       
     // after movie was clicked - it will remove the <ButtonMovieName> component
