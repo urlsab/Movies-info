@@ -9,12 +9,13 @@ const Routes = () => (
     <Switch>
       <Route exact path="/" component={RetrievedMovies} />
 
-      {/* : is for dynamic path after absulue path of '/movie' */}
-      {/* yes, and in the SelectedMovie - i destruct this data and use it for the api request */}
+      {/* ':' is for dynamic path (someString that act like refrence) after absulute path of '/movie' */}
+      {/* and in the SelectedMovie - we destruct this data and use it for the api request */}
 
       {/* :movieId is possible only after import { Route } from "react-router-dom";  */}
       <Route exact path="/movie/:movieId" component={SelectedMovie} />
 
+      {/* give different start-path for avoid rendering empty or undefined page */}
       <Route exact path="/also-like/:movieTitle" component={AlsoMovies} />
 
     </Switch>

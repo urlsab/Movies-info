@@ -1,12 +1,3 @@
-/*
-
-eli isak add to this compo:
-1. api req
-2. part of search func that relevent
-3. onClick event to this button with the relevent logic of searchFunc compo
-
-*/
-
 import React from "react";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -48,12 +39,11 @@ const ButtonAlsoLike = ({ linkPath, text }) => {
 
   return (
     <Button
-      //how dose this work? you have no component with the name "Link"...
-      // look here - https://stackoverflow.com/questions/51642532/how-to-make-a-material-ui-react-button-act-as-a-react-router-dom-link
-      // they may be other better solutions
-
+      
       // q: still it dosen't make any sense - how it's working???
-      // ans: maybe it's working because we do give a to= prop, that anyway shpuld be in the <Link> component 
+      // ans: maybe it's working because we do give a to= prop, that anyway shםuld be in the <Link> component 
+      // or: // look here - https://stackoverflow.com/questions/51642532/how-to-make-a-material-ui-react-button-act-as-a-react-router-dom-link
+
       component={Link}
       to={linkPath}
       color="primary"

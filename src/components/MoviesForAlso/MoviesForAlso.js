@@ -1,39 +1,35 @@
 import React from "react";
 import "./MoviesForAlso.css";
 import { Card, CardActionArea, CardContent, Typography } from "@mui/material";
-
 import ButtonAlsoLike from "../ButtonAlsoLike/ButtonAlsoLike";
-
-// how?! you don't have any func or component there with the name "LinkButton"
-
-// you should learn the difference between "named-export" and between "default export"
-// because in the ButtonMoviesForAlsoName compont at the end - i default export, 
-// so its mean i can call it at every name as i want
-// like : import YairSabag from "../ButtonMoviesForAlsoName/ButtonMoviesForAlsoName"; - this is legal
+// "default export" = i can call the component it at every name as i want
+// "named-export" = only as the same name of the component in the file
 
 const DEFAULT_PLACEHOLDER_IMAGE = 'https://www.allianceplast.com/wp-content/uploads/no-image.png';
 
 // define as an object for geting the properties
-//.Title and .Year are saved properties from the ombd-API
-
+//.Title and .Year are saved properties from the omdb-API
 
 const MoviesForAlso = ({ movies, toShowMoreAlsoButton = true }) => {
 
   console.log("movies", movies);
 
   // "N/A" is save string from the omdb-api that means that the MoviesForAlso have no poster
-  const poster = (movie) => movie?.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie?.Poster;
+  // movie? - check if true. new feature.
+  // const poster = (movie) => movie?.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie?.Poster;
 
-  const renderAlsoMoviesForAlsos = (movie) => {
+  // regular option:
+  const poster = movies.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movies.Poster;
+  
+  const renderAlsoMoviesForAlsos = () => {
     if (toShowMoreAlsoButton) {
-      return <ButtonAlsoLike linkPath={`Movie/${movie.Title}`} text="YOU MAY ALSO LIKE" />
+      return <ButtonAlsoLike linkPath={`Movie/${movies.Title}`} text="YOU MAY ALSO LIKE" />
     }
     else {
       return <Typography>
-      <p>MoviesForAlso Date: {movie.Released} ccc </p>       
-      <p>Rated: {movie.Rated} aaa</p>
-      <p>Genres:{movie.Genre} bbb</p>
-      {/* <p>Country: {MoviesForAlso.Country}</p> -- add that === need scrolling*/}
+      <p>Date: {movies.Released} </p>       
+      <p>Rated: {movies.Rated} </p>
+      <p>Genres: {movies.Genre} </p>
     </Typography>;
     }
   }
@@ -46,7 +42,7 @@ const MoviesForAlso = ({ movies, toShowMoreAlsoButton = true }) => {
           width="200"
           height="270"
           alt={`The MoviesForAlso titled: ${movie.Title}`}
-          src={poster(movie)}
+          src={poster}
         />
       </CardContent>
       <p> {movie.Title} </p>
@@ -56,7 +52,7 @@ const MoviesForAlso = ({ movies, toShowMoreAlsoButton = true }) => {
       {renderAlsoMoviesForAlsos(movie)}
 
       <CardActionArea>
-
+        
         {/* this <p> rendered as undfined. why??? */}
         {/* <p> ({MoviesForAlso.Year}) </p> */}
 
@@ -69,7 +65,7 @@ const MoviesForAlso = ({ movies, toShowMoreAlsoButton = true }) => {
   );
    
   return (
-    <div className="movie">
+    <div className="moviesForAlso">
      { movies?.length && renderMovies()}
     </div>
   );

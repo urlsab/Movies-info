@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Grid } from "@mui/material";
-
-// Api
 import { getSelectedMovies } from "../../api";
-
-// components
 import Movie from "../../components/Movie/Movie";
 
 // that exact name because of index.js of dir routes
 const SelectedMovie = () => {
-
-  // how and why?
+  
   // how useParams works?
 
   // https://stackoverflow.com/a/60998589/10766305
@@ -23,19 +18,14 @@ const SelectedMovie = () => {
   // useParams() catch what in the keft side of '='
   const { movieId } = useParams();
 
-  // how and why?
   // why useState with ({}) and not just ()?
-
   // the {} is the state init value, and the movie is an object and not a string - so i init it with empty object
   const [clickedMovie, setSelectedMovie] = useState({});
 
   // when page loads - to fetch the movie from api
 
-  // where do we use useEffect?
-  // all over the app, it is the replacment of the react life cycle hook - read this page - https://reactjs.org/docs/hooks-effect.html
-  
-  // can i or should i use more useEffects in this page or other pages?
-  // if you will make your app bigger and smarter - of course!
+  // we use useEffect allover the apphttps://reactjs.org/docs/hooks-effect.html 
+  // for bigger app we can use multy useEffect as we need
   useEffect(() => {
     async function getMovieFromApi() {
       const movieData = await getSelectedMovies(movieId);
