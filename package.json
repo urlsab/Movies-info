@@ -2,7 +2,7 @@
   "name": "movie-info",
   "version": "1.0.0",
   "engines": {
-    "node": "12.x",
+    "node": "16.0.0",
     "npm": "6.x"
   },
   "private": true,
