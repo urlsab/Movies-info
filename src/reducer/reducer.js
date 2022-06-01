@@ -1,4 +1,4 @@
-// no import React.. because we don't have any component here 
+// no "import React.."" because we don't have any component here 
 
 export const initialState = {
     loading: true,

@@ -88,4 +88,4 @@ export const getAlsoMovies = async (movieTitle) => {
   });
   return data;
 
-}
+}  

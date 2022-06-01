@@ -25,7 +25,7 @@ const Movie = ({ movie, toShowMoreInfoButton = true }) => {
               <p>Movie Date: {movie.Released} </p>       
               <p>Rated: {movie.Rated}</p>
               <p>Genres:{movie.Genre}</p>
-              {/* <p> Country: {movie.Country}</p> -- add that === need scrolling*/}
+              {/* <p> Country: {movie.Country}</p> -- add another propertie  === need scrolling the screen*/}
             </Typography>;
     }
   };
