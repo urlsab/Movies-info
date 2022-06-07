@@ -7,14 +7,12 @@ const SearchFunc = ({ search }) => {
   
   const handleSearchInputChanges = event => {
     setSearchValue(event.target.value);
-    // for clean search (that aviods unpropreate results) - we could add an if statemnet and setSearchValue("")  for some dirty strings)
   };
 
   const resetInputField = () => {
     setSearchValue("");
   };
 
-  // includes all funcs above
   const callSearchFunction = event => {
     event.preventDefault();
     search(searchValue);

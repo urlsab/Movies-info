@@ -5,8 +5,6 @@ import ButtonMovieName from "../ButtonMovieName/ButtonMovieName";
 
 const DEFAULT_PLACEHOLDER_IMAGE = 'https://www.allianceplast.com/wp-content/uploads/no-image.png';
 
-// define as an object for geting the properties
-//.Title and .Year are saved properties from the ombd-API
 const Movie = ({ movie, toShowMoreInfoButton = true }) => {
   console.log("movie", movie);
 
@@ -25,7 +23,6 @@ const Movie = ({ movie, toShowMoreInfoButton = true }) => {
               <p>Movie Date: {movie.Released} </p>       
               <p>Rated: {movie.Rated}</p>
               <p>Genres:{movie.Genre}</p>
-              {/* <p> Country: {movie.Country}</p> -- add another propertie  === need scrolling the screen*/}
             </Typography>;
     }
   };
@@ -44,17 +41,8 @@ const Movie = ({ movie, toShowMoreInfoButton = true }) => {
         <p> {movie.Title} </p>
         <p> ({movie.Year}) </p>
         {renderMoreInfoSection()}
-        {/* {renderAlsoMovies()} */}
-
         <CardActionArea>
-
-          {/* this <p> rendered as undfined. why??? */}
-          {/* <p> ({movie.Year}) </p> */}
-
-          {/* should render again list of movies with similar name/title */}
-          
         </CardActionArea>
-        
       </Card>
     </div>
   );

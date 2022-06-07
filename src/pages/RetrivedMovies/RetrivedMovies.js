@@ -1,11 +1,7 @@
 import React, { useReducer } from "react";
 import { initialState, reducer } from "../../reducer/reducer";
 import "./RetrivedMovies.css";
-
-// Api
-// for named export (and not default) we import by '{func/compo-name}'
 import { getSearchMovies } from "../../api";
-
 import Movie from "../../components/Movie/Movie";
 import SearchFunc from "../../components/SearchFunc/SearchFunc";
 import spinner from "../../assets/spinner.gif";
@@ -21,8 +17,6 @@ const RetrievedMovies = () => {
       type: "SEARCH_MOVIES_REQUEST",
     });
 
-    // how and why?
-    // destruct only the data i want from the api response
     const { Response, Search, Error } = await getSearchMovies(searchValue);
 
     if (Response === "True") {
@@ -45,7 +39,6 @@ const RetrievedMovies = () => {
   // include the properties from the reducer object
   const { movies, errorMessage, loading } = state;
 
-  // render the movies with some conditionals
   const showMovies =
 
   // user searched somtething and the data is loading
@@ -53,11 +46,9 @@ const RetrievedMovies = () => {
       <img className="spinner" src={spinner} alt="Loading spinner" />
     ) : 
     
-  // if user never searched
+  // while user didn't search yet
     loading && checkEntry === 0 && !errorMessage ? (
       <div className="beforeGif">
-        <p>type any word </p>
-        <p>and wait few seconds</p>
       </div>
     ) : 
     
@@ -70,10 +61,8 @@ const RetrievedMovies = () => {
     movies.map((movie, index) => (
         <Movie key={`${index}-${movie.Title}`} movie={movie} />
       )
-    )
-    // maybe add an <Forbidden /> component for movies that movie.rated === "PG-13" e.g - will map different components
-  ;
-
+    );
+  
   return (
     <div>
       <SearchFunc search={getSearch} />

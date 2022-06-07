@@ -22,7 +22,7 @@
   
   input[type="submit"] {
     padding: 5px;
-    background-color: transparent;
+    background-color: rgb(244, 244, 124);
     color: black;
     border: 2px solid black;
     width: 80px;
@@ -33,6 +33,4 @@
   input[type="submit"]:hover {
     background-color: #282c34;
     color: antiquewhite;
-  }
-  
-  
+  } 

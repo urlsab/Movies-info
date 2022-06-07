@@ -1,12 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-/*  '*' = for all files this style will "win" other ccs classes for box-sizing */
 * {
   box-sizing: border-box;
 }
