@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
-import Routes from "./routes";
-import MainHeader from "./components/MainHeader/MainHeader"
+import Routing from "./routes/index";
+import MainHeader from "./components/MainHeader/MainHeader";
+import Favicon from 'react-favicon'; 
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
               filter: 'brightness(85%)'
             }}>
             <MainHeader/>
-            <Routes />
+            <Favicon url='http://oflisback.github.io/react-favicon/img/wikipedia.ico' />
+            <Routing />
         </div> 
     </React.Fragment>
   );
